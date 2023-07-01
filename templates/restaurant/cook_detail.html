@@ -3,11 +3,11 @@
 {% block content %}
   <h1>
     Username: {{ cook.username }}
-    <a href="{% url 'kitchen:cook-delete' pk=driver.id %}" class="btn btn-danger link-to-page">
+    <a href="{% url 'restaurant:cook-delete' pk=driver.id %}" class="btn btn-danger link-to-page">
       Delete
     </a>
 
-    <a href="{% url 'kitchen:cook-update' pk=driver.id %}" class="btn btn-secondary link-to-page">
+    <a href="{% url 'restauran:cook-create' pk=driver.id %}" class="btn btn-secondary link-to-page">
       Update experience
     </a>
   </h1>
