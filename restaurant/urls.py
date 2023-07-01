@@ -16,7 +16,7 @@ from .views import (
     CookCreateView,
     CookExperienceUpdateView,
     CookDeleteView,
-    toggle_assign_to_dish,
+    ToggleAssignToDishView,
 )
 
 urlpatterns = [
@@ -51,7 +51,7 @@ urlpatterns = [
     path("dishes/<int:pk>/delete/", DishDeleteView.as_view(), name="dish-delete"),
     path(
         "dishes/<int:pk>/toggle-assign/",
-        toggle_assign_to_dish,
+        ToggleAssignToDishView.as_view(),
         name="toggle-dish-assign",
     ),
     # Cooks urls
