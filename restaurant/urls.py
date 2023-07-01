@@ -16,17 +16,13 @@ from .views import (
     CookCreateView,
     CookExperienceUpdateView,
     CookDeleteView,
-    toggle_assign_to_dish
+    toggle_assign_to_dish,
 )
 
 urlpatterns = [
-
     # index url
-
     path("", index, name="index"),
-
     # Dish Types urls
-
     path(
         "dishtypes/",
         DishTypeListView.as_view(),
@@ -47,9 +43,7 @@ urlpatterns = [
         DishTypeDeleteView.as_view(),
         name="dish-type-delete",
     ),
-
     # Dishes urls
-
     path("dishes/", DishListView.as_view(), name="dishes-list"),
     path("dishes/<int:pk>/", DishDetailView.as_view(), name="dish-detail"),
     path("dishes/create/", DishCreateView.as_view(), name="dish-create"),
@@ -60,13 +54,9 @@ urlpatterns = [
         toggle_assign_to_dish,
         name="toggle-dish-assign",
     ),
-
     # Cooks urls
-
     path("cooks/", CookListView.as_view(), name="cooks-list"),
-    path(
-        "cooks/<int:pk>/", CookDetailView.as_view(), name="cook-detail"
-    ),
+    path("cooks/<int:pk>/", CookDetailView.as_view(), name="cook-detail"),
     path("cooks/create/", CookCreateView.as_view(), name="cook-create"),
     path(
         "cooks/<int:pk>/update/",

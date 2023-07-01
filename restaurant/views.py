@@ -7,7 +7,13 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from restaurant.models import Cook, Dish, DishType
-from restaurant.forms import DishSearchForm, DishForm, CookSearchForm, CookCreationForm, CookExperienceUpdateForm
+from restaurant.forms import (
+    DishSearchForm,
+    DishForm,
+    CookSearchForm,
+    CookCreationForm,
+    CookExperienceUpdateForm,
+)
 
 
 @login_required
@@ -38,9 +44,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishSearchForm(initial={
-            "name": name
-        })
+        context["search_form"] = DishSearchForm(initial={"name": name})
 
         return context
 
@@ -50,9 +54,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
         form = DishSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(
-                name__icontains=form.cleaned_data["name"]
-            )
+            return queryset.filter(name__icontains=form.cleaned_data["name"])
 
         return queryset
 
@@ -83,9 +85,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishSearchForm(initial={
-            "name": name
-        })
+        context["search_form"] = DishSearchForm(initial={"name": name})
 
         return context
 
@@ -95,9 +95,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
         form = DishSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(
-                name__icontains=form.cleaned_data["name"]
-            )
+            return queryset.filter(name__icontains=form.cleaned_data["name"])
 
         return queryset
 
@@ -109,7 +107,7 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
     form_class = DishForm
-    success_url = reverse_lazy("restaurant:dishes-list")
+    success_url = reverse_lazy("restфaurant:dishes-list")
 
 
 class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
@@ -132,9 +130,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 
         username = self.request.GET.get("username", "")
 
-        context["search_form"] = CookSearchForm(initial={
-            "username": username
-        })
+        context["search_form"] = CookSearchForm(initial={"username": username})
 
         return context
 
@@ -144,9 +140,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
         form = CookSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(
-                username__icontains=form.cleaned_data["username"]
-            )
+            return queryset.filter(username__icontains=form.cleaned_data["username"])
 
         return queryset
 
@@ -176,9 +170,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 @login_required
 def toggle_assign_to_dish(request, pk) -> HttpResponseRedirect:
     cook = Cook.objects.get(id=request.user.id)
-    if (
-        Dish.objects.get(id=pk) in cook.dishes.all()
-    ):
+    if Dish.objects.get(id=pk) in cook.dishes.all():
         cook.cars.remove(pk)
     else:
         cook.cars.add(pk)
