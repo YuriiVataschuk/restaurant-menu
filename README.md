@@ -45,3 +45,12 @@ The home page provides an overview of the restaurant system, displaying the tota
 ### Assigning Cooks to Dishes
 
 - **Toggle Assign**: Assign or unassign a cook to a dish. This functionality allows cooks to manage the dishes they are responsible for. The toggle button can be found on the dish detail page.
+
+
+![image](https://github.com/YuriiVataschuk/restaurant-menu/assets/88705381/79d38e88-faca-4599-a148-51c0b8e1a58e)
+![image](https://github.com/YuriiVataschuk/restaurant-menu/assets/88705381/b940c2e1-9e3e-4c40-a33a-41c64ddfd9b5)
+![image](https://github.com/YuriiVataschuk/restaurant-menu/assets/88705381/0c0c2e26-307f-4cbe-96d7-46dfc4732313)
+![image](https://github.com/YuriiVataschuk/restaurant-menu/assets/88705381/230cbc99-c343-4d59-9002-52db7f897753)
+
+
+
