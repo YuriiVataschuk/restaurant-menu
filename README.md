@@ -2,6 +2,16 @@
 
 This is a Django-based restaurant management system that allows users to manage cooks, dishes, and dish types. It provides various views and functionalities for creating, updating, and deleting records, as well as searching and filtering data.
 
+## Try it now!
+
+[Restaurant project is deployed to Render](https://django-restaurant.onrender.com/)
+
+Use this account for tests:
+
+Login: testuser
+
+Password: testuser
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/YuriiVataschuk/restaurant-menu.git`
