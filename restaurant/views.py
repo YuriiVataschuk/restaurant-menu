@@ -123,7 +123,7 @@ class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
-    paginate_by = 5
+    paginate_by = 15
 
     def get_context_data(self, *, object_list=None, **kwargs) -> dict:
         context = super(CookListView, self).get_context_data(**kwargs)
